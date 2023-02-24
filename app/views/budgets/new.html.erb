@@ -3,5 +3,6 @@
 
   <%= render "form", budget: @budget %>
 
-  <%= link_to 'Back to budgets', budgets_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Back to category", category_path(id: params[:category_id]), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
 </div>
