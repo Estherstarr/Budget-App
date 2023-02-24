@@ -1,37 +1,15 @@
-<div class="relative mx-auto h-full w-full max-w-md shadow-2xl">
-  <div>
-      <div class="bg-lightblue px-10 py-10 shadow-2xl shadow-lightblue-500/50">
-        <h1 class="text-center text-white text-4xl">BUGDETS</h1>
-      </div>
-      <div class=" flex justify-between bg-white px-3 py-3 shadow-2xl">
-        <h2 class="font-bold text-md text-slate-700"><%= @category.name %></h2>
-        <p class="font-bold"><%= Money.new(@category.budgets.sum(:amount_cents)).format %></p>
-      </div>
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
 
-        <div class="flex flex-col ml-3 mr-3 mt-10">
-          <% if notice.present? %>
-            <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg mt-2 inline-block" id="notice"><%= notice %></p>
-          <% end %>
-        
-          <% @category.budgets.each do |budget| %>
-            <div class="w-full bg-white rounded shadow-2xl px-6 py-4 mb-5 ">
-              <div class="flex justify-between ">
-                <h2 class="text-slate-700 text-xl"><%= budget.name%></h2>
-                <h2 class="font-bold "><%= budget.amount.format%></h2>
-              </div>
-              <p class="text-slate-500 text-sm mt-3"> <%= budget.created_at.time.to_date %></p>
-            </div>
-          <% end %>
-        </div>
+    <%= render @category %>
 
-        <div class="bg-lightgreen px-5 py-5 mt-10">
-          <div class="border border-white px-10 py-5 text-center text-white font-medium text-lg">
-            <%= link_to 'ADD BUDGET', new_budget_path(category_id: @category.id) %>
-          </div>
-        </div>
-
-        <button class="rounded bg-slate-200 border-2 border-solid">
-          <%= link_to 'Back to categories', categories_path %>
-        </button>
+    <%= link_to 'Edit this category', edit_category_path(@category), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this category', category_path(@category), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back to categories', categories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
