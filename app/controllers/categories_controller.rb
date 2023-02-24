@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.includes(:user, :budgets).where(user: current_user)
-
   end
 
   # GET /categories/1 or /categories/1.json
