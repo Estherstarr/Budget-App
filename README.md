@@ -22,7 +22,9 @@
 
 # 📖 BUDGET <a name="about-project"></a>
 
-**Blog App** A RoR Blog project. Creating a fully functional website that shows the list of posts and empowers readers to interact with them by adding comments and liking posts. The application also provides an endpoint for user authentication.
+**Budget App** This Budget App project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
