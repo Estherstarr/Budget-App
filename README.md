@@ -44,7 +44,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="https://www.loom.com/share/f851077fcf24473f98f37a8bbeb42a1f"></a>
+## 🚀 Video Demo <a name="https://www.loom.com/share/f851077fcf24473f98f37a8bbeb42a1f"></a>
+
+## 🚀 Live Demo <a name="https://budget-app.herokuapp.com/"></a>
 
 
 
