@@ -155,6 +155,10 @@ Give this project a ⭐️ if you like it !
 Ruby documentation 
 Railsguide documentation 
 
+Original design idea by Gregoire Vella on Behance.
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
