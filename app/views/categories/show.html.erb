@@ -1,0 +1,37 @@
+<div class="relative mx-auto h-full w-full max-w-md shadow-2xl">
+  <div>
+      <div class="bg-lightblue px-10 py-10 shadow-2xl shadow-lightblue-500/50">
+        <h1 class="text-center text-white text-4xl">BUGDETS</h1>
+      </div>
+      <div class=" flex justify-between bg-white px-3 py-3 shadow-2xl">
+        <h2 class="font-bold text-md text-slate-700"><%= @category.name %></h2>
+        <p class="font-bold"><%= Money.new(@category.budgets.sum(:amount_cents)).format %></p>
+      </div>
+
+        <div class="flex flex-col ml-3 mr-3 mt-10">
+          <% if notice.present? %>
+            <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg mt-2 inline-block" id="notice"><%= notice %></p>
+          <% end %>
+        
+          <% @category.budgets.each do |budget| %>
+            <div class="w-full bg-white rounded shadow-2xl px-6 py-4 mb-5 ">
+              <div class="flex justify-between ">
+                <h2 class="text-slate-700 text-xl"><%= budget.name%></h2>
+                <h2 class="font-bold "><%= budget.amount.format%></h2>
+              </div>
+              <p class="text-slate-500 text-sm mt-3"> <%= budget.created_at.time.to_date %></p>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="bg-lightgreen px-5 py-5 mt-10">
+          <div class="border border-white px-10 py-5 text-center text-white font-medium text-lg">
+            <button><%= link_to 'ADD BUDGET', new_budget_path(category_id: @category.id) %></button>
+          </div>
+        </div>
+
+        <button class="rounded bg-slate-200 border-2 border-solid">
+          <%= link_to 'Back to categories', categories_path %>
+        </button>
+  </div>
+</div>

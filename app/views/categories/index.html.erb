@@ -1,0 +1,24 @@
+<div class="relative mx-auto h-full w-full max-w-md shadow-2xl">
+  <div>
+
+    <div class="w-full">
+      <% if notice.present? %>
+        <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+      <% end %>
+
+      <div class="flex justify-between items-center bg-lightblue px-10 py-10 shadow-2xl shadow-lightblue-500/50">
+        <h1 class="font-bold text-4xl">Categories</h1>
+        <%= button_to 'LOG OUT', destroy_user_session_path,class:"rounded bg-red-700 text-white px-1 py-2 font-bold", method: :delete, data:{turbo:false} %>
+      </div>
+
+      <div id="categories" class="min-w-full ">
+        <%= render @categories %>
+      </div>
+    </div>
+  </div>
+        <div class="bg-lightgreen px-5 py-5 mt-10">
+          <div class="border border-white px-10 py-5 text-center text-white font-medium text-lg">
+        <button><%= link_to 'New category', new_category_path %></button>
+          </div>
+        </div>
+</div>
